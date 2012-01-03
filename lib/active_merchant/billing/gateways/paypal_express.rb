@@ -80,6 +80,7 @@ module ActiveMerchant #:nodoc:
                 xml.tag! 'n2:ButtonSource', application_id.to_s.slice(0,32) unless application_id.blank?
                 xml.tag! 'n2:InvoiceID', options[:order_id]
                 xml.tag! 'n2:OrderDescription', options[:description]
+                xml.tag! 'n2:Custom', options[:custom]
               end
             end
           end
@@ -113,6 +114,7 @@ module ActiveMerchant #:nodoc:
                 end
 
                 xml.tag! 'n2:OrderDescription', options[:description]
+                xml.tag! 'n2:Custom', options[:custom]
                 xml.tag! 'n2:InvoiceID', options[:order_id]
 
                 if options[:items]
